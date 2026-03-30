@@ -14,7 +14,7 @@ const openai = new OpenAI({
 
 export const getAICompletion = async (userPrompt) => {
   const completion = await openai.chat.completions.create({
-    model: 'openai/gpt-4o-mini', // Replaced gpt-5.2 with a more typical model name
+    model: 'openai/gpt-4o-mini',
     messages: [
       {
         role: 'user',
@@ -23,5 +23,5 @@ export const getAICompletion = async (userPrompt) => {
     ],
   });
 
-  return completion.choices[0].message;
+  return completion;
 };
